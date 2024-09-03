@@ -8,15 +8,16 @@ MLOps process needs to deploy containers for:
 
 ## AKS Architecture
 #### Control Plane
-- Single cluster
-- Private cluster (Azure Private Link service)
-- 3 availability zones
+- Single cluster.
+- Private cluster (Azure Private Link service).
+- 3 availability zones.
 
 #### Node Pools
-- 3 node pools provided by VMSS 
-  - 1 system node pool (taint with `CriticalAddonsOnly=true:NoSchedule`)
-  - 1 user node pool for model training (taint for model training)
-  - 1 user node pool for model serving (taint for model serving)
+4 VMSS node pools:
+  - 1 system node pool (taint with `CriticalAddonsOnly=true:NoSchedule`) in 3 availability zones.
+  - 1 user node pool for GitHub self-hosted runners in 1 availability zone.
+  - 1 user node pool for model training (taint for model training) in 1 availability zone.
+  - 1 user node pool for model serving (taint for model serving) in 3 availability zones.
 
 #### Network
 - Azure CNI Overlay
