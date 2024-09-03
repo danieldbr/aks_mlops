@@ -13,7 +13,7 @@ MLOps process needs to deploy containers for:
 - 3 availability zones.
 
 #### Node Pools
-4 VMSS node pools:
+4 VMSSs node pools:
   - 1 system node pool (taint with `CriticalAddonsOnly=true:NoSchedule`) in 3 availability zones.
   - 1 user node pool for GitHub self-hosted runners in 1 availability zone.
   - 1 user node pool for model training (taint for model training) in 1 availability zone.
