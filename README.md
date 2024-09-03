@@ -6,11 +6,11 @@ MLOps process needs to deploy containers for:
 1. Model training restricted to internal network.
 2. Model serving accessible over the internet.
 
-## AKS Infrastructure
-### Architecture Decisions
+## AKS Architecture
 #### Control Plane
-- Private Endpoint
-- 3 Availability zones
+- Single cluster
+- Private cluster (Azure Private Link service)
+- 3 availability zones
 
 #### Node Pools
 - 3 node pools provided by VMSS 
