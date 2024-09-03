@@ -23,14 +23,10 @@ MLOps process needs to deploy containers for:
 - Azure CNI Overlay
 
 #### Security Features
-- 2 custom namespaces
-  - `model-training`
-  - `model-serving`
-- Network Policies
+- Namespaces
+- Network policies
 - Azure Key Vault
 - Microsoft Entra ID authentication with Azure RBAC
- - `Azure Kubernetes Service RBAC Cluster Admin`
- - (role for CI/CD)
 
 #### Deployments
 - 2 deployments
