@@ -2,9 +2,9 @@
 Use case of AKS delivering scalable infrastructure for machine learning tasks.
 
 ## Scenario
-MLOps process needs to deploy containers for two different needs:<br>
-1. Deployments for model training and internal network
-2. Deployments for model serving and open to internet
+MLOps process needs to deploy containers for:
+1. Model training restricted to internal network.
+2. Model serving accessible over the internet.
 
 ## AKS Infrastructure
 ### Architecture Decisions
