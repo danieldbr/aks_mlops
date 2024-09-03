@@ -1,2 +1,58 @@
-# aks_mlops
-MLOps scenario showcasing AKS
+# POC - AKS Cluster for MLOps
+Use case of AKS delivering scalable infrastructure for machine learning tasks.
+
+## Scenario
+MLOps process needs to deploy containers for two different needs:<br>
+1. Deployments for model training and internal network
+2. Deployments for model serving and open to internet
+
+## AKS Infrastructure
+### Architecture Decisions
+#### Control Plane
+- Private Endpoint
+- 3 Availability zones
+
+#### Node Pools
+- 3 node pools provided by VMSS 
+  - 1 system node pool (taint with `CriticalAddonsOnly=true:NoSchedule`)
+  - 1 user node pool for model training (taint for model training)
+  - 1 user node pool for model serving (taint for model serving)
+
+#### Network
+- Azure CNI Overlay
+
+#### Security Features
+- 2 custom namespaces
+  - `model-training`
+  - `model-serving`
+- Network Policies
+- Azure Key Vault
+- Microsoft Entra ID authentication with Azure RBAC
+ - `Azure Kubernetes Service RBAC Cluster Admin`
+ - (role for CI/CD)
+
+#### Deployments
+- 2 deployments
+  - `model-training-deployment`
+  - `model-serving-deployment`
+
+#### Autoscale
+- VPA
+- HPA
+- Cluster autoscaler
+
+#### Configuration Management
+- Terraform 
+
+#### CICD
+- GitHub Actions
+  - Terraform
+  - Kubernetes Manifests
+
+#### Components to be defined
+- Subnets
+- Ingress
+- Egress
+- Monitoring
+- Updates
+- Backup
