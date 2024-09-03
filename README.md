@@ -29,9 +29,7 @@ MLOps process needs to deploy containers for:
 - Microsoft Entra ID authentication with Azure RBAC
 
 #### Deployments
-- 2 deployments
-  - `model-training-deployment`
-  - `model-serving-deployment`
+- 3 deployments
 
 #### Autoscale
 - VPA
@@ -53,3 +51,4 @@ MLOps process needs to deploy containers for:
 - Monitoring
 - Updates
 - Backup
+- Jumphost
