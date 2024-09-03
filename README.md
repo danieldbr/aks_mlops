@@ -1,4 +1,4 @@
-# POC - AKS Cluster for MLOps
+# AKS Cluster for MLOps
 Use case of AKS delivering scalable infrastructure for machine learning tasks.
 
 ## Scenario
